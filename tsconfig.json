@@ -1,0 +1,52 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "strict": true,
+    "module": "ES2020",
+    "moduleResolution": "Node",
+    "target": "ES2020",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "types": ["vite/client", "node"],
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "declaration": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "allowJs": true,
+    "noEmit": true,
+    "checkJs": false,
+    "jsx": "preserve",
+    "strictNullChecks": true,
+    "forceConsistentCasingInFileNames": true,
+    "useUnknownInCatchVariables": true,
+    "baseUrl": ".",
+    "paths": {
+      "components/*": ["./components/*"],
+      "services/*": ["./services/*"],
+      "pages/*": ["./pages/*"],
+      "assets/*": ["./assets/*"],
+      "types/*": ["./types/*"],
+    }
+  },
+    "include": [
+      "components/**/*",
+      "renderer/**/*",
+      "services/**/*",
+      "server/*",
+      "pages/**/*",
+      "assets/**/*",
+      "types/**/*",
+      "vite.config.ts",
+  ],
+  "ts-node": {
+    "transpileOnly": true,
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}
+

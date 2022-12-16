@@ -1,0 +1,14 @@
+{
+    "Script Setup": {
+        "prefix": ["script", "script-setup-ts"],
+        "body": ["<script setup lang=\"ts\">", "\t$0", "</script>"],
+        "description": "Script setup lang=\"ts\".",
+        "scope": "vue"
+    },
+    "SFC template without css": {
+        "prefix": ["template", "template-without-css"],
+        "body": ["<template>", "\t$1", "</template>", "", "<script setup lang=\"ts\">", "\t$0", "</script>"],
+        "description": "A template with script setup lang ts and without css",
+        "scope": "vue"
+    }
+}
