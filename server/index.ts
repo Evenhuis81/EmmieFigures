@@ -3,6 +3,7 @@ import compression from 'compression';
 import {renderPage} from 'vite-plugin-ssr';
 
 const isProduction = process.env.NODE_ENV === 'production';
+const port = process.env.PORT || 3000;
 const root = `${__dirname}/..`;
 
 const app = express();
@@ -36,7 +37,6 @@ const developmentServer = async () => {
         res.status(statusCode).type(contentType).send(body);
     });
 
-    const port = process.env.PORT || 3000;
-    app.listen(port);
-    console.log(`Server running at http://localhost:${port}`); // eslint-disable-line no-console
+    // eslint-disable-next-line no-console
+    app.listen(port, () => console.log(`Server running at http://localhost:${port}`));
 })();

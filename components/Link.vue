@@ -6,6 +6,7 @@
 <style scoped>
 a {
     padding: 3px 10px;
+    text-decoration: none;
 }
 a.active {
     background-color: #eee;

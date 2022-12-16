@@ -1,2 +1,3 @@
-export const appTitle = 'Vite SSR app';
-export const appDescription = 'App using Vite + vite-plugin-ssr';
+export const IS_SSR = typeof document === 'undefined';
+export const appTitle = 'Emmie Figures';
+export const appDescription = 'Extension application for Emmie';
