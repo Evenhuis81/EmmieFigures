@@ -1,9 +1,9 @@
 <template>
     <div id="topbar">
         <a href="/">
-            <!-- <img id="logo" src="/assets/logo.png" /> -->
+            <img id="logo" src="/assets/logo.png" />
         </a>
-        <div id="title">Emmie Figures</div>
+        <div id="title"><a href="/about">Emmie Figures</a></div>
         <div id="auth" />
     </div>
 </template>

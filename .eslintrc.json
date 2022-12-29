@@ -11,6 +11,7 @@
     },
     "extends": [
         "eslint:recommended",
+        "plugin:import/recommended",
         "plugin:vue/vue3-recommended",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
@@ -66,7 +67,7 @@
         "no-underscore-dangle": ["warn", {"allowAfterThis": true, "allow": ["__key", "__id"]}],
         "spaced-comment": "warn",
         "yoda": "warn",
-        // "no-warning-comments": "warn",
+        "no-warning-comments": "warn",
         "max-depth": ["error", 4],
         "max-statements-per-line": ["error", {"max": 2}],
         "array-callback-return": "error",
@@ -79,14 +80,11 @@
         "id-length": ["error", {"exceptions": ["e", "h", "_", "i", "a", "b"]}],
         "max-nested-callbacks": "error",
         "new-cap": ["error", {"newIsCapExceptions": ["default"]}],
-
         "@typescript-eslint/ban-ts-comment": ["error", {"ts-ignore": "allow-with-description"}],
-
         "no-unused-vars": "off",
         "@typescript-eslint/no-unused-vars": ["error", {"argsIgnorePattern": "_"}],
         "no-else-return": ["error", {"allowElseIf": false}],
         "no-constructor-return": "error",
-        "no-duplicate-imports": "error",
         "no-self-compare": "error",
         "no-unmodified-loop-condition": "error",
         "no-unreachable-loop": "error",
@@ -120,6 +118,7 @@
             }
         ],
         "no-sequences": "error",
+        "no-duplicate-imports": "off",
         "no-shadow": "off",
         "@typescript-eslint/no-shadow": "error",
         "no-throw-literal": "error",

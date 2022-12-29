@@ -6,8 +6,9 @@ import type {PageContextServer} from 'types/vite-ssr';
 import {appDescription, appTitle} from 'services/constants';
 
 export {render};
+
 // See https://vite-plugin-ssr.com/data-fetching
-export const passToClient = ['pageProps', 'urlPathname'];
+export const passToClient = ['pageProps', 'documentProps'];
 
 const render = async (pageContext: PageContextServer) => {
     const app = createApp(pageContext);

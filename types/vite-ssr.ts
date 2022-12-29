@@ -28,3 +28,9 @@ type PageContextServer = PageContextBuiltIn<Page> & PageContextCustom;
 type PageContextClient = PageContextBuiltInClient<Page> & PageContextCustom;
 
 type PageContext = PageContextClient | PageContextServer;
+
+// Same as `Object.assign()` but with type inference
+export declare function ObjectAssign<Obj extends object, ObjAddendum>(
+    obj: Obj,
+    objAddendum: ObjAddendum,
+): asserts obj is Obj & ObjAddendum;

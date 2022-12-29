@@ -1,13 +1,22 @@
 import {createApp} from './app';
-import type {PageContextClient} from 'types/vite-ssr';
+import {getPageTitle} from './getPageTitle';
+import type {PageContext} from 'types/vite-ssr';
+import type {PageContextBuiltInClient} from 'vite-plugin-ssr/client/router';
 
 export {render};
 
-const render = (pageContext: PageContextClient) => {
-    const app = createApp(pageContext);
-    app.mount('#app');
+let app: ReturnType<typeof createApp>;
+
+const render = (pageContext: PageContextBuiltInClient & PageContext) => {
+    document.title = getPageTitle(pageContext);
+    if (!app) {
+        app = createApp(pageContext);
+        app.mount('#app');
+        return;
+    }
+    app.changePage(pageContext);
 };
 
-/* To enable Client-side Routing:
-export const clientRouting = true
-// !! WARNING !! Before doing so, read https://vite-plugin-ssr.com/clientRouting */
+export const prefetchStaticAssets = {when: 'VIEWPORT'};
+
+export const clientRouting = true;
