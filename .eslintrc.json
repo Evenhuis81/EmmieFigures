@@ -38,7 +38,7 @@
             "jsx": true
         }
     },
-    "plugins": ["vue", "@typescript-eslint", "prettier"],
+    "plugins": ["import", "promise", "sort-imports-es6-autofix", "unused-imports", "vue", "@typescript-eslint", "prettier"],
     "rules": {
         /**
          * STANDARD ESLINT RULES
@@ -214,6 +214,39 @@
         // It's off, which is risky, but we use/abuse this for wanted side effects
         "vue/no-side-effects-in-computed-properties": ["off"],
 
-        "vue/multi-word-component-names": "off"
+        "vue/multi-word-component-names": "off",
+
+        /**
+         * OTHER ESLINT RULES
+         */
+         "sort-imports-es6-autofix/sort-imports-es6": [
+            "warn",
+            {
+                "ignoreCase": false,
+                "ignoreMemberSort": false,
+                "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
+            }
+        ],
+
+        "promise/prefer-await-to-then": "warn",
+        "promise/prefer-await-to-callbacks": "warn",
+        "promise/no-new-statics": "warn",
+
+        "unused-imports/no-unused-imports": "error",
+        "unused-imports/no-unused-vars": [
+			"warn",
+			{ "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
+		],
+
+        "import/newline-after-import": ["error", {"count": 1}],
+        "import/max-dependencies": [
+            "warn",
+            {
+                // TODO :: should become lower, 10 would be nice
+                "max": 15,
+                "ignoreTypeImports": true
+            }
+        ],
+        "import/first": "error"
     }
 }

@@ -1,8 +1,8 @@
 import {createSSRApp, defineComponent, h, markRaw, reactive} from 'vue';
-import type {UnwrapNestedRefs} from 'vue';
+import {setPageContext} from './usePageContext';
 import PageShell from './PageShell.vue';
 import type {ObjectAssign, PageContext} from 'types/vite-ssr';
-import {setPageContext} from './usePageContext';
+import type {UnwrapNestedRefs} from 'vue';
 
 export {createApp};
 
@@ -52,6 +52,4 @@ const changePage = (pageContext: PageContext) => {
     rootComponent.pageProps = markRaw(pageContext.pageProps || {});
 };
 
-const objectAssign: typeof ObjectAssign = (obj, objAddendum) => {
-    Object.assign(obj, objAddendum);
-};
+const objectAssign: typeof ObjectAssign = (obj, objAddendum) => Object.assign(obj, objAddendum);
